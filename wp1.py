@@ -8,22 +8,20 @@
 import sys 
 
 def main():
-	pass
+	reverse_cipher()
 
 def reverse_cipher():
-	#read in data from a txt file
-	#put each line in file into list, reverse the list & use string slicing to reverse each sentence
-	#output data in another file
+	#ISSUE: output file order needs to be flipped 
 	reversed_lines = []
-	file_input = input("Enter a filename to input contents to: ")
+	file_input = input("Enter a filename to input contents to: ") 
 	file_output = input("Enter a filename to output contents to: ")
-	with open(file_input, 'r') as input_file:  # opening the file to read
+	with open(file_input, 'r') as input_file:  # opening the txt file to read
 		for line in input_file: 
 			line = line.strip()  #get rid of ending newlines/tabs/spaces
-			reversed_lines.append(line[::-1])
+			reversed_lines.append(line[::-1])  #appending the reversed line to the list
 	with open(file_output, 'a') as output_file:
 		for reversed_lines in reversed_lines:
-			output_file.write(reversed_lines)
+			output_file.write(reversed_lines + "\n")
 
 if __name__ == '__main__':
 	main()
