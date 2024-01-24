@@ -20,7 +20,7 @@ def reverse_cipher():
 			line = line.strip()  #get rid of ending newlines/tabs/spaces
 			reversed_lines.append(line[::-1])  #appending the reversed line to the list
 	with open(file_output, 'a') as output_file:
-		for reversed_lines in reversed_lines:
+		for reversed_lines in reversed(reversed_lines):
 			output_file.write(reversed_lines + "\n")
 
 if __name__ == '__main__':
