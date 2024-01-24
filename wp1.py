@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 #wp1.py
 
@@ -24,7 +23,7 @@ def reverse_cipher():
 			reversed_lines.append(line[::-1])
 	with open(file_output, 'a') as output_file:
 		for reversed_lines in reversed_lines:
-			output_file.write()
+			output_file.write(reversed_lines)
 
 if __name__ == '__main__':
 	main()
