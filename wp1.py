@@ -11,10 +11,9 @@ def main():
 	reverse_cipher()
 
 def reverse_cipher():
-	#ISSUE: output file order needs to be flipped 
 	reversed_lines = []
-	file_input = input("Enter a filename to input contents to: ") 
-	file_output = input("Enter a filename to output contents to: ")
+	file_input = sys.argv[1] 
+	file_output = sys.argv[2]
 	with open(file_input, 'r') as input_file:  # opening the txt file to read
 		for line in input_file: 
 			line = line.strip()  #get rid of ending newlines/tabs/spaces
