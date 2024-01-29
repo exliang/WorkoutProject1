@@ -16,8 +16,12 @@ def reverse_cipher():
     file_input = sys.argv[1]
     file_output = sys.argv[2]
 
-    input_file = open(file_input, 'rb')
-    output_file = open(file_output, 'wb')
+    try:
+        input_file = open(file_input, 'rb')
+        output_file = open(file_output, 'wb')
+    except FileNotFoundError:
+        print("File doesn't exist.")
+        return
 
     input_file.seek(0, 2)  # move file pointer to end of file
     end = input_file.tell()  # current pos of file pointer
